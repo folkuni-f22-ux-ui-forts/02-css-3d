@@ -15,3 +15,51 @@
 .frame:hover > * {
 	transform: perspective(10em) rotateY(135deg) rotateZ(5deg);
 }
+
+
+.tent {
+	margin-top: 4em;
+	border: 1px solid black;
+	padding: 1em 3em;
+	display: inline-block;
+	background-color: rgb(151, 234, 151);
+}
+.tent > * {
+	width: 16em;
+	height: 5em;
+	border: 1px solid rgb(51, 76, 151);
+	background-color: rgb(41, 41, 124);
+	color: rgb(163, 199, 217);
+	transition: all 2.5s ease-in;
+
+	/* box shadow: x y blur-radius color */
+	/* solen är uppe till vänster, simuleras med x och y */
+	/* suddigare skugga (blur radius) ju längre från objektet skuggan är */
+	box-shadow: 0.5em 0.25em 0.5em rgb(66, 66, 66);
+}
+.tent > :first-child {
+	transform:
+		perspective(40em)
+		scale(0.5)
+		rotateX(30deg);
+	transform-origin: bottom;
+}
+
+.tent > :nth-child(2) {
+	transform:
+		perspective(40em)
+		scale(0.5)
+		rotateX(-30deg);
+	transform-origin: top;
+}
+
+.tent:hover > :first-child {
+	transform:
+		perspective(15em)
+		rotateX(30deg);
+}
+.tent:hover> :nth-child(2) {
+	transform:
+		perspective(15em)
+		rotateX(-30deg);
+}
